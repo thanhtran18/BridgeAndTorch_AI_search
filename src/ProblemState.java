@@ -4,16 +4,17 @@ public class ProblemState
 {
     private int timeSpent;
     private int timeRemaining;
-    private ArrayList<Integer> peopleOnEndSide;
-    private ArrayList<Integer> peopleOnStartSide; //maybe not?
+    //MAYBE WE CAN JUST COUNT THE NUMBER OF PEOPLE ON EACH SIDE INSTEAD OF HAVE A LIST OF PEOPLE!!!???
+    public static ArrayList<Person> peopleOnRightSide;
+    public static ArrayList<Person> peopleOnLeftSide; //maybe not?
     //private static boolean torchSide; //maybe not
 
-    public ProblemState(int timeSpent, int timeRemaining, ArrayList<Integer> peopleOnEndSide, ArrayList<Integer> peopleOnStartSide)
+    public ProblemState(int timeSpent, int timeRemaining, ArrayList<Person> peopleOnRightSide, ArrayList<Person> peopleOnStartSide)
     {
         this.timeSpent = timeSpent;
         this.timeRemaining = timeRemaining;
-        this.peopleOnEndSide = peopleOnEndSide;
-        this.peopleOnStartSide = peopleOnStartSide;
+        this.peopleOnRightSide = peopleOnRightSide;
+        this.peopleOnLeftSide = peopleOnStartSide;
     } //constructor
 
     @Override
@@ -21,14 +22,20 @@ public class ProblemState
     {
         int currTimeSpent = timeSpent;
         int currTimeRemaining = timeRemaining;
-        ArrayList<Integer> currPeopleOnEndSide = new ArrayList<Integer>();
-        for (int currPerson : peopleOnEndSide)
-            currPeopleOnEndSide.add(currPerson);
-        ArrayList<Integer> currPeopleOnStartSide = new ArrayList<Integer>();
-        for (int currPerson : peopleOnStartSide)
-            currPeopleOnStartSide.add(currPerson);
+        ArrayList<Person> currPeopleOnRightSide = new ArrayList<Person>();
+        for (Person currPerson : peopleOnRightSide)
+        {
+            Person clonedPerson = currPerson.clone();
+            currPeopleOnRightSide.add(clonedPerson);
+        }
+        ArrayList<Person> currPeopleOnLeftSide = new ArrayList<Person>();
+        for (Person currPerson : peopleOnLeftSide)
+        {
+            Person clonedPerson = currPerson.clone();
+            currPeopleOnLeftSide.add(clonedPerson);
+        }
 
-        return new ProblemState(currTimeSpent, currTimeRemaining, currPeopleOnEndSide, currPeopleOnStartSide);
+        return new ProblemState(currTimeSpent, currTimeRemaining, currPeopleOnRightSide, currPeopleOnLeftSide);
     } //clone
 
     //returns 1 if this is better newState
@@ -36,9 +43,9 @@ public class ProblemState
     public int compare(ProblemState newState)
     {
         int result;
-        if (peopleOnEndSide.size() > newState.peopleOnEndSide.size())
+        if (peopleOnRightSide.size() > newState.peopleOnRightSide.size())
             result = 1;
-        else if (peopleOnEndSide.size() < newState.peopleOnEndSide.size())
+        else if (peopleOnRightSide.size() < newState.peopleOnRightSide.size())
             result = -1;
         else
         {
@@ -52,5 +59,11 @@ public class ProblemState
         return result;
     } //compare
 
-
+    public boolean areWeDone()
+    {
+        boolean result = false;
+        if (peopleOnLeftSide.size() == 0)
+            result = true;
+        return result;
+    }
 } //class
