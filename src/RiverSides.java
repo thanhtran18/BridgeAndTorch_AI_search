@@ -1,1 +1,0 @@
-enum Side { LEFT, RIGHT }

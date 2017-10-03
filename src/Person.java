@@ -1,11 +1,11 @@
-public class Person
+public class Person implements Comparable<Person>
 {
     private int crossingTime;
     private Side side;
 
-    public Person(int speed, Side side)
+    public Person(int crossingTime, Side side)
     {
-        this.crossingTime = speed;
+        this.crossingTime = crossingTime;
         this.side = side;
     }
 
@@ -14,22 +14,39 @@ public class Person
     {
         int currCrossingTime = crossingTime;
         Side currSide = side;
-        return new Person(crossingTime, currSide);
+        return new Person(currCrossingTime, currSide);
     }
 
+    //SHOULD IT BE HERE?
     public void move()
     {
         if (side == Side.LEFT)
         {
             side = Side.RIGHT;
-            ProblemState.peopleOnRightSide.add(this);
-            ProblemState.peopleOnLeftSide.remove(this);
+            ProblemState.rightSide.add(this);
+            ProblemState.leftSide.remove(this);
         }
         else
         {
             side = Side.LEFT;
-            ProblemState.peopleOnLeftSide.add(this);
-            ProblemState.peopleOnRightSide.remove(this);
+            ProblemState.leftSide.add(this);
+            ProblemState.rightSide.remove(this);
         }
+    }
+
+    public int getCrossingTime()
+    {
+        return crossingTime;
+    }
+
+    public Side getSide()
+    {
+        return side;
+    }
+
+    @Override
+    public int compareTo(Person other)
+    {
+        return Integer.compare(crossingTime, other.crossingTime);
     }
 }
