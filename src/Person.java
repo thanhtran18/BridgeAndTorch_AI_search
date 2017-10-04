@@ -23,14 +23,10 @@ public class Person implements Comparable<Person>
         if (side == Side.LEFT)
         {
             side = Side.RIGHT;
-            ProblemState.rightSide.add(this);
-            ProblemState.leftSide.remove(this);
         }
         else
         {
             side = Side.LEFT;
-            ProblemState.leftSide.add(this);
-            ProblemState.rightSide.remove(this);
         }
     }
 

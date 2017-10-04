@@ -77,6 +77,7 @@ public class ProblemState
         return cost;
     }
 
+    //get the cost f = g + h
     public int calculateCost(ProblemState state)
     {
         int heuristic = calculateHeuristic(state);
@@ -84,7 +85,7 @@ public class ProblemState
         return stateCost;
     }
 
-    public ProblemState generateMove(ProblemOperation operation, ProblemState prevState) //applyMove
+    public ProblemState getNewState(ProblemOperation operation, ProblemState prevState) //applyMove
     {
         ProblemOperation thisOperation = operation;
         int level;
@@ -109,11 +110,19 @@ public class ProblemState
         this.parentState = parentState;
     }
 
-    public ArrayList<Person> generateNextState() //children states
+    public ArrayList<ProblemState> generateNextState() //children states
     {
         ArrayList<ProblemState> children = new ArrayList<>();
-        //generate ALL POSSIBLE MOVES
-    }
+        ArrayList<ProblemOperation> allPossibleOps = createAllPossibleOperations();
+        //generate all possible operations that could be the children
+
+        for (ProblemOperation currOperation : allPossibleOps)
+        {
+            ProblemState nextState = getNewState(currOperation, this);
+            children.add(nextState);
+        }
+        return children;
+    } //generateNextState
 
     public ArrayList<ProblemOperation> createAllPossibleOperations()
     {
