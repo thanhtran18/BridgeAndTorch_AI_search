@@ -1,1 +1,5 @@
-public enum Side { LEFT, RIGHT }
+public enum Side
+{
+    LEFT,
+    RIGHT
+}

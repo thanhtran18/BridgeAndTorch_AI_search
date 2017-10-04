@@ -16,10 +16,7 @@ public class ProblemOperation
         return people;
     }
 
-    public int getCrossingTimeOfTwo(Person p1, Person p2)
-    {
-        return (p1.getCrossingTime() > p2.getCrossingTime() ? p1.getCrossingTime():p2.getCrossingTime());
-    }
+
 
     public int getMovingTime()
     {

@@ -84,7 +84,7 @@ public class ProblemState
         return stateCost;
     }
 
-    public ProblemState generateMove(ProblemOperation operation, ProblemState prevState)
+    public ProblemState generateMove(ProblemOperation operation, ProblemState prevState) //applyMove
     {
         ProblemOperation thisOperation = operation;
         int level;
@@ -115,8 +115,51 @@ public class ProblemState
         //generate ALL POSSIBLE MOVES
     }
 
-    public void createAllPossibleOperations()
+    public ArrayList<ProblemOperation> createAllPossibleOperations()
     {
-        
+        ArrayList<ProblemOperation> allOperations = new ArrayList<>();
+        if (torchSide == Side.LEFT)
+            allOperations = createAllLeftToRightOperations();
+        else
+            allOperations = createAllRightToLeftOperations();
+        return allOperations;
+    }
+
+    public ArrayList<ProblemOperation> createAllLeftToRightOperations()
+    {
+        ArrayList<ProblemOperation> ltrOperations = new ArrayList<>();
+        for (int i = 0; i < leftSide.size() - 1; i++)
+        {
+            Person p1 = leftSide.get(i);
+            for (int j = i + 1; j < leftSide.size(); j++)
+            {
+                Person p2 = leftSide.get(j);
+                int movingTime = getCrossingTimeOfTwo(p1, p2);
+                ArrayList<Person> peopleOnTheMove = new ArrayList<>();
+                peopleOnTheMove.add(p1);
+                peopleOnTheMove.add(p2);
+                ltrOperations.add(new ProblemOperation(peopleOnTheMove, movingTime));
+            }
+        }
+        return ltrOperations;
+    } //createAllLeftToRigthOperations
+
+    public ArrayList<ProblemOperation> createAllRightToLeftOperations()
+    {
+        ArrayList<ProblemOperation> rtlOperations = new ArrayList<>();
+        for (int i = 0; i < rightSide.size() - 1; i++)
+        {
+            Person currPerson = rightSide.get(i);
+            int movingTime = currPerson.getCrossingTime();
+            ArrayList<Person> peopleOnTheMove = new ArrayList<>();
+            peopleOnTheMove.add(currPerson);
+            rtlOperations.add(new ProblemOperation(peopleOnTheMove, movingTime));
+        }
+        return rtlOperations;
+    } //createAllRightToLeftOperations
+
+    public int getCrossingTimeOfTwo(Person p1, Person p2)
+    {
+        return (p1.getCrossingTime() > p2.getCrossingTime() ? p1.getCrossingTime():p2.getCrossingTime());
     }
 } //class
