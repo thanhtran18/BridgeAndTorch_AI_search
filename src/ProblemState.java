@@ -61,16 +61,16 @@ public class ProblemState
         return result;
     }
 
-    public int calculateHeuristic(ProblemState state)
+    public int calculateHeuristic()
     {
-        int number = state.leftSide.size()/2;
-        int count = state.leftSide.size() - 1;
+        int number = this.leftSide.size()/2;
+        int count = this.leftSide.size() - 1;
         int cost = 0;
         Collections.sort(leftSide);
 
         while (number > 0)
         {
-            cost += state.leftSide.get(count).getCrossingTime();
+            cost += this.leftSide.get(count).getCrossingTime();
             count--;
             number--;
         }
@@ -78,10 +78,10 @@ public class ProblemState
     }
 
     //get the cost f = g + h
-    public int calculateCost(ProblemState state)
+    public int calculateCost()
     {
-        int heuristic = calculateHeuristic(state);
-        stateCost = heuristic + state.stateLevel;
+        int heuristic = this.calculateHeuristic();
+        stateCost = heuristic + this.stateLevel;
         return stateCost;
     }
 
@@ -95,13 +95,13 @@ public class ProblemState
         else
             newSide = Side.LEFT;
 
-        int newCost = calculateCost(this);
+        int newCost = calculateCost();
         level = stateLevel + thisOperation.getMovingTime();
         ProblemState newState = new ProblemState(timeSpent, timeRemaining, rightSide, leftSide, newSide, newCost, level, prevState);
         newState.leftSide.removeAll(thisOperation.getPeople());
         newState.rightSide.addAll(thisOperation.getPeople());
         newState.timeSpent += thisOperation.getMovingTime();
-        newState.stateCost = calculateCost(newState);
+        newState.stateCost = newState.calculateCost();
         return newState;
     }
 
@@ -170,5 +170,15 @@ public class ProblemState
     public int getCrossingTimeOfTwo(Person p1, Person p2)
     {
         return (p1.getCrossingTime() > p2.getCrossingTime() ? p1.getCrossingTime():p2.getCrossingTime());
+    }
+
+    public void setStateCost(int stateCost)
+    {
+        this.stateCost = stateCost;
+    }
+
+    public ProblemState getParentState()
+    {
+        return parentState;
     }
 } //class
