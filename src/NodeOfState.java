@@ -1,26 +1,26 @@
 //contains every necessary information for a certain problem state (including ProblemState object)
-public class ProblemNode
+public class NodeOfState
 {
-    private ProblemState parentState;
+    private NodeOfState parentState;
     private ProblemState currState;
-    private double heristicCost; //for A* algorithm
+    private double heuristicCost; //for A* algorithm
     private double actualCost;
     private double functionCost;
 
-    public ProblemNode(ProblemState currState) //construct the root node
+    public NodeOfState(ProblemState currState) //construct the root node
     {
         parentState = null;
         this.currState = currState;
-        heristicCost = 0;
+        heuristicCost = 0;
         actualCost = 0;
         functionCost = 0;
     }
 
-    public ProblemNode(ProblemState parentState, ProblemState currState, double heuristicCost, double actualCost)
+    public NodeOfState(NodeOfState parentState, ProblemState currState, double actualCost, double heuristicCost)
     {
         this.parentState = parentState;
         this.currState = currState;
-        this.heristicCost = heuristicCost;
+        this.heuristicCost = heuristicCost;
         this.actualCost = actualCost;
         functionCost = heuristicCost + actualCost;
     }
@@ -30,7 +30,7 @@ public class ProblemNode
         return currState;
     }
 
-    public ProblemState getParentState()
+    public NodeOfState getParentState()
     {
         return parentState;
     }
@@ -42,7 +42,7 @@ public class ProblemNode
 
     public double getHeristicCost()
     {
-        return heristicCost;
+        return heuristicCost;
     }
 
     public double getFunctionCost()

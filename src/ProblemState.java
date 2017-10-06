@@ -124,7 +124,7 @@ public class ProblemState
         this.parentState = parentState;
     }
 
-    public ArrayList<ProblemState> generateNextState() //children states
+    public ArrayList<ProblemState> generateNextStates() //children states
     {
         ArrayList<ProblemState> children = new ArrayList<>();
         ArrayList<ProblemOperation> allPossibleOps = createAllPossibleOperations();
@@ -137,7 +137,7 @@ public class ProblemState
             children.add(getNewState(currOperation, this));
         }
         return children;
-    } //generateNextState
+    } //generateNextStates
 
     public ArrayList<ProblemOperation> createAllPossibleOperations()
     {
@@ -220,5 +220,10 @@ public class ProblemState
     public Side getTorchSide()
     {
         return torchSide;
+    }
+
+    public int getTimeSpent()
+    {
+        return timeSpent;
     }
 } //class

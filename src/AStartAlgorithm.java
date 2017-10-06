@@ -5,7 +5,7 @@ public class AStartAlgorithm
     public static void processAStar(ArrayList<Person> leftSide, int maxTime)
     {
         ProblemState rootState = new ProblemState(0, maxTime, new ArrayList<Person>(), leftSide, Side.LEFT, 0, null);
-        ProblemNode rootNode = new ProblemNode(rootState);
+        //ProblemNode rootNode = new ProblemNode(rootState);
         ProblemState lastState = applyAStar(rootState);
         String solution = getSolutionToGoalState(lastState);
         System.out.println(solution);
@@ -25,7 +25,7 @@ public class AStartAlgorithm
                 ProblemState current = open.poll();
                 closed.add(current);
 
-                for (ProblemState newState : current.generateNextState())
+                for (ProblemState newState : current.generateNextStates())
                 {
                     if ( newState.areWeDone() )
                     {
