@@ -4,7 +4,7 @@ import java.util.Collections;
 public class ProblemState
 {
     private int timeSpent;
-    private int timeRemaining;
+    private int timeConstraint;
     //MAYBE WE CAN JUST COUNT THE NUMBER OF PEOPLE ON EACH SIDE INSTEAD OF HAVE A LIST OF PEOPLE!!!???
     private ArrayList<Person> rightSide;
     private ArrayList<Person> leftSide; //maybe not?
@@ -13,16 +13,18 @@ public class ProblemState
     private int stateLevel; //level
     private ProblemState parentState;
 
-    public ProblemState(int timeSpent, int timeRemaining, ArrayList<Person> peopleOnRightSide,
-                        ArrayList<Person> peopleOnLeftSide, Side torchSide, int stateCost, int stateLevel, ProblemState parentState)
+    public ProblemState(int timeSpent, int timeConstraint, ArrayList<Person> peopleOnRightSide,
+                        ArrayList<Person> peopleOnLeftSide, Side torchSide, int newStateLevel, ProblemState parentState)
     {
         this.timeSpent = timeSpent;
-        this.timeRemaining = timeRemaining;
-        this.rightSide = peopleOnRightSide;
-        this.leftSide = peopleOnLeftSide;
+        this.timeConstraint = timeConstraint;
+        this.rightSide = new ArrayList<>(peopleOnRightSide);
+        this.leftSide = new ArrayList<>(peopleOnLeftSide);
+        Collections.sort(this.leftSide);
         this.torchSide = torchSide;
-        this.stateCost = stateCost;
-        this.stateLevel = stateLevel;
+        this.stateLevel = newStateLevel;
+        this.stateCost = calculateCost();
+
         this.parentState = parentState;
     } //constructor
 
@@ -30,7 +32,7 @@ public class ProblemState
     public ProblemState clone()
     {
         int currTimeSpent = timeSpent;
-        int currTimeRemaining = timeRemaining;
+        int currTimeConstraint = timeConstraint;
         ArrayList<Person> currPeopleOnRightSide = new ArrayList<Person>();
         for (Person currPerson : rightSide)
         {
@@ -48,8 +50,8 @@ public class ProblemState
         int currStateLevel = stateLevel;
         ProblemState currParentState = parentState;
 
-        return new ProblemState(currTimeSpent, currTimeRemaining, currPeopleOnRightSide, currPeopleOnLeftSide,
-                currTorchSide, currStateCost, currStateLevel, parentState);
+        return new ProblemState(currTimeSpent, currTimeConstraint, currPeopleOnRightSide, currPeopleOnLeftSide,
+                currTorchSide, currStateLevel, parentState);
     } //clone
 
 
@@ -88,21 +90,33 @@ public class ProblemState
     public ProblemState getNewState(ProblemOperation operation, ProblemState prevState) //applyMove
     {
         ProblemOperation thisOperation = operation;
-        int level;
-        Side newSide;
-        if (torchSide.equals(Side.LEFT))
-            newSide = Side.RIGHT;
-        else
-            newSide = Side.LEFT;
 
-        int newCost = calculateCost();
-        level = stateLevel + thisOperation.getMovingTime();
-        ProblemState newState = new ProblemState(timeSpent, timeRemaining, rightSide, leftSide, newSide, newCost, level, prevState);
-        newState.leftSide.removeAll(thisOperation.getPeople());
-        newState.rightSide.addAll(thisOperation.getPeople());
-        newState.timeSpent += thisOperation.getMovingTime();
-        newState.stateCost = newState.calculateCost();
-        return newState;
+        if (torchSide.equals(Side.LEFT))
+        {
+            Side newSide = Side.RIGHT;
+            //int newCost = calculateCost();
+            int level = stateLevel + thisOperation.getMovingTime();
+            ProblemState newState = new ProblemState(timeSpent, timeConstraint, rightSide, leftSide, newSide, level, prevState);
+            newState.leftSide.removeAll(thisOperation.getPeople());
+            //********PROBLEM HERE AT THE ABOVE LINE!!!! CHANGE IN NEW STATE LEADS TO CHANGE IN THIS
+            newState.rightSide.addAll(thisOperation.getPeople());
+            newState.timeSpent += thisOperation.getMovingTime();
+            newState.calculateCost();
+            return newState;
+        }
+        else
+        {
+            Side newSide = Side.LEFT;
+            //int newCost = calculateCost();
+            int level = stateLevel + thisOperation.getMovingTime();
+            ProblemState newState = new ProblemState(timeSpent, timeConstraint, rightSide, leftSide, newSide, level, prevState);
+            newState.rightSide.removeAll(thisOperation.getPeople());
+            newState.leftSide.addAll(thisOperation.getPeople());
+            newState.timeSpent += thisOperation.getMovingTime();
+            newState.calculateCost();
+            return newState;
+        }
+
     }
 
     public void setParentState(ProblemState parentState)
@@ -118,8 +132,9 @@ public class ProblemState
 
         for (ProblemOperation currOperation : allPossibleOps)
         {
-            ProblemState nextState = getNewState(currOperation, this);
-            children.add(nextState);
+            //ProblemState nextState = getNewState(currOperation, this);
+            //SECOND OPERATION HAS DIFFERENT PREV STATE, MAYBE CONSTRUCTOR CHANGES THE ORIGINAL STATE
+            children.add(getNewState(currOperation, this));
         }
         return children;
     } //generateNextState
@@ -180,5 +195,30 @@ public class ProblemState
     public ProblemState getParentState()
     {
         return parentState;
+    }
+
+    @Override
+    public String toString()
+    {
+        if (timeConstraint > 0)
+        {
+            StringBuilder result = new StringBuilder();
+            result.append("Left side: ");
+            for (Person currPerson : leftSide)
+                result.append(currPerson.getCrossingTime() + " ");
+            result.append("\nRight side: ");
+            for (Person currPerson : rightSide)
+                result.append(currPerson.getCrossingTime() + " ");
+            result.append("\nTorch side: " + getTorchSide());
+            result.append("\nTime spent: " + timeSpent + "\n\n");
+            return result.toString();
+        }
+        else
+            return "Failed to achieve the goal!";
+    }
+
+    public Side getTorchSide()
+    {
+        return torchSide;
     }
 } //class

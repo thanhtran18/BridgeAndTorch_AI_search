@@ -4,12 +4,15 @@ public class AStartAlgorithm
 {
     public static void processAStar(ArrayList<Person> leftSide, int maxTime)
     {
-        ProblemState rootState = new ProblemState(0, maxTime, new ArrayList<Person>(), leftSide, Side.LEFT, 0, 0, null);
+        ProblemState rootState = new ProblemState(0, maxTime, new ArrayList<Person>(), leftSide, Side.LEFT, 0, null);
         ProblemNode rootNode = new ProblemNode(rootState);
-        //perfrom searching
+        ProblemState lastState = applyAStar(rootState);
+        String solution = getSolutionToGoalState(lastState);
+        System.out.println(solution);
+
     }
 
-    public static ProblemState applyAStar(ProblemState currState)
+    public static ProblemState applyAStar(ProblemState currState) //performAStar
     {
         if ( !currState.areWeDone() )
         {
@@ -49,7 +52,7 @@ public class AStartAlgorithm
                                 }
                                 if (newState.calculateCost() < openState.calculateCost())
                                 {
-                                    openState.setStateCost((int)newState.calculateCost());
+                                    openState.setStateCost(newState.calculateCost());
                                     openState.setParentState(newState.getParentState());
                                 }
                             }
@@ -64,4 +67,35 @@ public class AStartAlgorithm
             return currState;
         return null;
     } //applyAStar
+
+    public static ProblemState swapProblemStates(ProblemState state) //reverseStates
+    {
+        ProblemState currState = state;
+        ProblemState parentState = null;
+
+        while (currState != null)
+        {
+            ProblemState tempState = currState.getParentState();
+            currState.setParentState(parentState);
+            parentState = currState;
+            currState = tempState;
+        }
+        return parentState;
+    }
+
+    public static String getSolutionToGoalState(ProblemState goal)
+    {
+        StringBuilder result = new StringBuilder();
+        goal = swapProblemStates(goal);
+        int numberOfNodes = 0;
+
+        while (goal != null)
+        {
+            result.append(goal.toString());
+            goal = goal.getParentState();
+            numberOfNodes++;
+        }
+        result.append("Number of nodes processed: " + numberOfNodes);
+        return result.toString();
+    }
 }
