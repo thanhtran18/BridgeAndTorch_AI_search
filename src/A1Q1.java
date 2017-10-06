@@ -28,7 +28,8 @@ public class A1Q1
         for (int i = 0; i < crossingTimes.length; i++)
             initialPeople.add(new Person(crossingTimes[i], Side.LEFT));
 
-        AStartAlgorithm.processAStar(initialPeople, maxTime);
+        //AStartAlgorithm.processAStar(initialPeople, maxTime);
         //BFSearch.processBFS(initialPeople, maxTime);
+        DFSearch.processDFS(initialPeople, maxTime);
     }
 }
