@@ -5,9 +5,8 @@ public class ProblemState
 {
     private int timeSpent;
     private int timeConstraint;
-    //MAYBE WE CAN JUST COUNT THE NUMBER OF PEOPLE ON EACH SIDE INSTEAD OF HAVE A LIST OF PEOPLE!!!???
     private ArrayList<Person> rightSide;
-    private ArrayList<Person> leftSide; //maybe not?
+    private ArrayList<Person> leftSide;
     private Side torchSide;
     private int stateCost; //stateValue
     private int stateLevel; //level
@@ -98,7 +97,6 @@ public class ProblemState
             int level = stateLevel + thisOperation.getMovingTime();
             ProblemState newState = new ProblemState(timeSpent, timeConstraint, rightSide, leftSide, newSide, level, prevState);
             newState.leftSide.removeAll(thisOperation.getPeople());
-            //********PROBLEM HERE AT THE ABOVE LINE!!!! CHANGE IN NEW STATE LEADS TO CHANGE IN THIS
             newState.rightSide.addAll(thisOperation.getPeople());
             newState.timeSpent += thisOperation.getMovingTime();
             newState.calculateCost();
@@ -133,7 +131,6 @@ public class ProblemState
         for (ProblemOperation currOperation : allPossibleOps)
         {
             //ProblemState nextState = getNewState(currOperation, this);
-            //SECOND OPERATION HAS DIFFERENT PREV STATE, MAYBE CONSTRUCTOR CHANGES THE ORIGINAL STATE
             children.add(getNewState(currOperation, this));
         }
         return children;
@@ -166,7 +163,7 @@ public class ProblemState
             }
         }
         return ltrOperations;
-    } //createAllLeftToRigthOperations
+    } //createAllLeftToRightOperations
 
     public ArrayList<ProblemOperation> createAllRightToLeftOperations()
     {
