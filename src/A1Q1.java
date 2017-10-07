@@ -31,5 +31,6 @@ public class A1Q1
         //AStartAlgorithm.processAStar(initialPeople, maxTime);
         //BFSearch.processBFS(initialPeople, maxTime);
         DFSearch.processDFS(initialPeople, maxTime);
+        //IterativeDeepeningDFS.processIterativeDeepening(initialPeople, maxTime, 3);
     }
 }
