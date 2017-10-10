@@ -1,23 +1,39 @@
+//-----------------------------------------
+// NAME		    : CONG THANH TRAN
+// STUDENT NUMBER	: 7802106
+// COURSE		: COMP 3190 - Introduction to Artificial Intelligence
+// INSTRUCTOR	: JOHN BRAICO
+// ASSIGNMENT	: assignment #1
+// QUESTION	    : question #1
+//
+// REMARKS: Solving the Bridge and Torch problem with different strategies: Heuristic (A* algorithm), BFS, DFS and iterative deepening
+//
+//-----------------------------------------
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class A1Q1
 {
-
+    //------------------------------------------------------
+    // main
+    //
+    // PURPOSE:	main method - gets things going
+    // PARAMETERS:
+    //		String[]: commandline argument list
+    // Returns: none
+    //------------------------------------------------------
     public static void main(String[] args)
     {
-	// write your code here
-        System.out.println("Hello");
-        System.out.println("PK");
-        System.out.println("dfD");
+        int maxTime = 0;        //maximum time constraint given by the user
+        int[] crossingTimes;    //array of the crossing times of the characters
+        ArrayList<Person> initialPeople = new ArrayList<>();    //list of all characters
 
-        int maxTime = 0;
-        int[] crossingTimes;
-        ArrayList<Person> initialPeople = new ArrayList<>();
-
+        //Get input from users, the first number will be taken as the time constraint
         System.out.println("Give me the input please: ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+
         String[] inputNumbers = input.split(" ");
         crossingTimes = new int[inputNumbers.length-1];
 
@@ -28,9 +44,14 @@ public class A1Q1
         for (int i = 0; i < crossingTimes.length; i++)
             initialPeople.add(new Person(crossingTimes[i], Side.LEFT));
 
-        //AStartAlgorithm.processAStar(initialPeople, maxTime);
-        //BFSearch.processBFS(initialPeople, maxTime);
+        //Call different methods from different classes to solve the problem with different strategies
+        System.out.println("\n***** A* ALGORITHM *****");
+        AStartAlgorithm.processAStar(initialPeople, maxTime);
+        System.out.println("\n***** BFS ALGORITHM *****");
+        BFSearch.processBFS(initialPeople, maxTime);
+        System.out.println("\n***** DFS ALGORITHM *****");
         DFSearch.processDFS(initialPeople, maxTime);
-        //IterativeDeepeningDFS.processIterativeDeepening(initialPeople, maxTime, 3);
-    }
-}
+        System.out.println("\n***** ITERATIVE DEEPENING DFS ALGORITHM *****");
+        IterativeDeepeningDFS.processIterativeDeepening(initialPeople, maxTime, 3);
+    } //main
+} //class

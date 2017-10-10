@@ -223,4 +223,9 @@ public class ProblemState
     {
         return timeSpent;
     }
+
+    public int getTimeConstraint()
+    {
+        return timeConstraint;
+    }
 } //class
