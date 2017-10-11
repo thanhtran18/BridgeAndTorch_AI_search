@@ -109,19 +109,28 @@ public class IterativeDeepeningDFS
                 int stackSize = solution.size();
                 int timeSpent = 0;
 
+                StringBuilder output = new StringBuilder();
                 for (int i = 0; i < stackSize; i++)
                 {
                     temp = solution.pop();
-                    System.out.print(temp.getCurrState().toString());
-                    timeSpent += temp.getCurrState().getTimeSpent();
+                    output.append(temp.getCurrState().toString());
+                    timeSpent = temp.getCurrState().getTimeSpent();
                 }
 
-                System.out.println("Total time spent: " + timeSpent);
-                System.out.println("DFS cost: " + temp.getCurrState().calculateCost());
-                System.out.println("Number of nodes processed: " + count);
-                System.out.println("Solution found at depth: " + depth);
+
                 if (timeSpent > temp.getCurrState().getTimeConstraint())
+                {
+                    System.out.println("Total time spent: " + timeSpent);
+                    System.out.println("Current depth: " + depth);
                     System.out.println("\nIterative Deepening DFS has failed to move all people to the other side on time! :(");
+                }
+                else
+                {
+                    System.out.println(output.toString());
+                    System.out.println("Total time spent: " + timeSpent);
+                    System.out.println("Solution found at depth: " + depth);
+                    System.out.println("\nSUCCESSFULLY solved the problem by Iterative Deepening DFS!");
+                }
                 break;
             }
         } //while

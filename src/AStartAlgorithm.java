@@ -31,6 +31,8 @@ public class AStartAlgorithm
         System.out.println("Total time spent: " + lastState.getTimeSpent());
         if (lastState.getTimeSpent() > lastState.getTimeConstraint())
             System.out.println("\nA* algorithm has failed to move all the people to the other side on time! :(");
+        else
+            System.out.println("\nSUCCESSFULLY solved the problem by A* algorithm!");
     } //processAStar
 
     //------------------------------------------------------

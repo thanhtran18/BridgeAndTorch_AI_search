@@ -11,6 +11,7 @@ import java.util.*;
 
 public class BFSearch
 {
+    private static int numberOfTries = 1; //number of tries taken
     //------------------------------------------------------
     // processBFS
     //
@@ -81,21 +82,34 @@ public class BFSearch
                 int stackSize = solution.size(); //initial size of the stack
                 int timeSpent = 0;
 
+                StringBuilder output = new StringBuilder();
+
                 for (int i = 0; i < stackSize; i++)
                 {
                     temp = solution.pop();
-                    System.out.println(temp.getCurrState().toString());
+                    output.append(temp.getCurrState().toString());
 
                     if (i == stackSize - 1)
                         timeSpent += temp.getCurrState().getTimeSpent();
                 } //for
 
-                System.out.println("Total time spent: " + timeSpent);
-                System.out.println("BFS cost: " + temp.getActualCost());
-                System.out.println("Number of nodes processed: " + count);
-
                 if (timeSpent > temp.getCurrState().getTimeConstraint())
-                    System.out.println("\nBFS has failed to move all people to the other side on time! :(");
+                {
+                    System.out.println("Total time spent by BFS: " + timeSpent);
+                    System.out.println("BFS cost: " + temp.getActualCost());
+                    System.out.println("\nBFS has failed to move all people to the other side on time for the " + numberOfTries + " time! :(");
+                    System.out.println("\n***** RETRY BFS *****");
+                    numberOfTries++;
+                    performBFS(states, visitedStates);
+                }
+                else
+                {
+                    System.out.println(output.toString());
+                    System.out.println("Total time spent by BFS: " + timeSpent);
+                    System.out.println("BFS cost: " + temp.getActualCost());
+                    System.out.println("Number of nodes processed: " + count);
+                    System.out.println("\nSUCCESSFULLY solved the problem by BFS!");
+                }
                 break;
             } //else
         } //while

@@ -13,6 +13,7 @@ import java.util.Stack;
 
 public class DFSearch
 {
+    private static int numberOfTries = 1;
     //------------------------------------------------------
     // processDFS
     //
@@ -85,22 +86,35 @@ public class DFSearch
                 int stackSize = solution.size();
                 int timeSpent = 0;
 
+                StringBuilder output = new StringBuilder();
+
                 //empty the solution stack
                 for (int i = 0; i < stackSize; i++)
                 {
                     temp = solution.pop();
-                    System.out.print(temp.getCurrState().toString());
-                    timeSpent += temp.getCurrState().getTimeSpent();
+                    output.append(temp.getCurrState().toString());
+                    timeSpent = temp.getCurrState().getTimeSpent();
                 }
 
-                System.out.println("Total time spent: " + timeSpent);
-                System.out.println("DFS cost: " + temp.getCurrState().calculateCost());
-                System.out.println("Number of nodes processed: " + count);
                 if (timeSpent > temp.getCurrState().getTimeConstraint())
-                    System.out.println("\nDFS has failed to move all people to the other side on time! :(");
+                {
+                    System.out.println("Total time spent by DFS: " + timeSpent);
+                    System.out.println("DFS cost: " + temp.getActualCost());
+                    System.out.println("\nDFS has failed to move all people to the other side on time for the " + numberOfTries + " time! :(");
+                    numberOfTries++;
+                    System.out.println("\n***** RETRY DFS *****");
+                    performDFS(states, visitedStates);
+                }
+                else
+                {
+                    System.out.println(output.toString());
+                    System.out.println("Total time spent by DSF: " + timeSpent);
+                    System.out.println("DFS cost: " + temp.getActualCost());
+                    System.out.println("Number of nodes processed: " + count);
+                    System.out.println("\nSUCCESSFULLY solved the problem by DFS!");
+                }
                 break;
             }
         } //while
-        //System.out.println("Error in performing DFS");
     } //performDFS
 } //class
