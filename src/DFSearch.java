@@ -98,11 +98,11 @@ public class DFSearch
 
                 if (timeSpent > temp.getCurrState().getTimeConstraint())
                 {
-                    System.out.println("Total time spent by DFS: " + timeSpent);
+                    /*System.out.println("Total time spent by DFS: " + timeSpent);
                     System.out.println("DFS cost: " + temp.getActualCost());
                     System.out.println("\nDFS has failed to move all people to the other side on time for the " + numberOfTries + " time! :(");
+                    System.out.println("\n***** RETRY DFS *****");*/
                     numberOfTries++;
-                    System.out.println("\n***** RETRY DFS *****");
                     performDFS(states, visitedStates);
                 }
                 else
@@ -111,7 +111,7 @@ public class DFSearch
                     System.out.println("Total time spent by DSF: " + timeSpent);
                     System.out.println("DFS cost: " + temp.getActualCost());
                     System.out.println("Number of nodes processed: " + count);
-                    System.out.println("\nSUCCESSFULLY solved the problem by DFS!");
+                    System.out.println("\nSUCCESSFULLY solved the problem by DFS after " + numberOfTries + " tries!");
                 }
                 break;
             }

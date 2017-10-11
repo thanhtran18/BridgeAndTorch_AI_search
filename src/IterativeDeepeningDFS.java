@@ -129,7 +129,7 @@ public class IterativeDeepeningDFS
                     System.out.println(output.toString());
                     System.out.println("Total time spent: " + timeSpent);
                     System.out.println("Solution found at depth: " + depth);
-                    System.out.println("\nSUCCESSFULLY solved the problem by Iterative Deepening DFS!");
+                    System.out.println("SUCCESSFULLY solved the problem by Iterative Deepening DFS!");
                 }
                 break;
             }

@@ -95,20 +95,20 @@ public class BFSearch
 
                 if (timeSpent > temp.getCurrState().getTimeConstraint())
                 {
-                    System.out.println("Total time spent by BFS: " + timeSpent);
+                    /*System.out.println("Total time spent by BFS: " + timeSpent);
                     System.out.println("BFS cost: " + temp.getActualCost());
                     System.out.println("\nBFS has failed to move all people to the other side on time for the " + numberOfTries + " time! :(");
-                    System.out.println("\n***** RETRY BFS *****");
+                    System.out.println("\n***** RETRY BFS *****");*/
                     numberOfTries++;
                     performBFS(states, visitedStates);
                 }
-                else
+                if (timeSpent <= temp.getCurrState().getTimeConstraint())
                 {
                     System.out.println(output.toString());
                     System.out.println("Total time spent by BFS: " + timeSpent);
                     System.out.println("BFS cost: " + temp.getActualCost());
                     System.out.println("Number of nodes processed: " + count);
-                    System.out.println("\nSUCCESSFULLY solved the problem by BFS!");
+                    System.out.println("\nSUCCESSFULLY solved the problem by BFS after " + numberOfTries + " tries!");
                 }
                 break;
             } //else

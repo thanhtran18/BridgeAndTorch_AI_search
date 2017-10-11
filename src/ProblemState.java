@@ -311,14 +311,17 @@ public class ProblemState
         if (timeConstraint > 0)
         {
             StringBuilder result = new StringBuilder();
-            result.append("Left side: ");
+            result.append("\nLeft side: ");
             for (Person currPerson : leftSide)
                 result.append(currPerson.getCrossingTime() + " ");
-            result.append("\nRight side: ");
+            result.append("| ");
+            result.append("Right side: ");
             for (Person currPerson : rightSide)
                 result.append(currPerson.getCrossingTime() + " ");
-            result.append("\nTorch side: " + getTorchSide());
-            result.append("\nTime spent: " + timeSpent + "\n\n");
+            result.append("| ");
+            result.append("Torch side: " + getTorchSide());
+            result.append("| ");
+            result.append("Time spent: " + timeSpent);
             return result.toString();
         }
         else
