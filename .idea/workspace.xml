@@ -4,10 +4,6 @@
     <list default="true" id="276340ae-d78d-4624-b779-0b2ee57cd3d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/A1Q1.java" afterPath="$PROJECT_DIR$/src/A1Q1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BFSearch.java" afterPath="$PROJECT_DIR$/src/BFSearch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DFSearch.java" afterPath="$PROJECT_DIR$/src/DFSearch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IterativeDeepeningDFS.java" afterPath="$PROJECT_DIR$/src/IterativeDeepeningDFS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ProblemState.java" afterPath="$PROJECT_DIR$/src/ProblemState.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,10 @@
       <file leaf-file-name="A1Q1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/A1Q1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="194">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="23" selection-end-column="60" />
               <folding>
-                <element signature="e#0#2264#0" expanded="true" />
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#2238#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +56,8 @@
       <file leaf-file-name="ProblemState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ProblemState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="321" column="6" lean-forward="true" selection-start-line="321" selection-start-column="6" selection-end-line="321" selection-end-column="6" />
+            <state relative-caret-position="234">
+              <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
               <folding>
                 <element signature="e#0#13000#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -76,8 +71,8 @@
       <file leaf-file-name="AStartAlgorithm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AStartAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+            <state relative-caret-position="31">
+              <caret line="62" column="4" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="69" selection-end-column="60" />
               <folding>
                 <element signature="e#0#5738#0" expanded="true" />
               </folding>
@@ -97,10 +92,22 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ComparableState.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ComparableState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#578#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="BFSearch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BFSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="1628">
               <caret line="110" column="114" lean-forward="false" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
               <folding>
                 <element signature="e#0#4984#0" expanded="true" />
@@ -112,8 +119,8 @@
       <file leaf-file-name="NodeOfState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NodeOfState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="87" selection-end-column="60" />
+            <state relative-caret-position="-1047">
+              <caret line="13" column="57" lean-forward="true" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
               <folding>
                 <element signature="e#2648#2649#0" expanded="true" />
                 <element signature="e#2682#2683#0" expanded="true" />
@@ -129,18 +136,6 @@
               <caret line="55" column="5" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="43" />
               <folding>
                 <element signature="e#0#1571#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="44" column="4" lean-forward="false" selection-start-line="44" selection-start-column="4" selection-end-line="51" selection-end-column="60" />
-              <folding>
-                <element signature="e#0#2104#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,9 +195,9 @@
         <option value="$PROJECT_DIR$/src/AStartAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/BFSearch.java" />
         <option value="$PROJECT_DIR$/src/DFSearch.java" />
-        <option value="$PROJECT_DIR$/src/A1Q1.java" />
         <option value="$PROJECT_DIR$/src/IterativeDeepeningDFS.java" />
         <option value="$PROJECT_DIR$/src/ProblemState.java" />
+        <option value="$PROJECT_DIR$/src/A1Q1.java" />
       </list>
     </option>
   </component>
@@ -333,7 +328,7 @@
       <workItem from="1507388828101" duration="7478000" />
       <workItem from="1507468879008" duration="3477000" />
       <workItem from="1507556410693" duration="6469000" />
-      <workItem from="1507649196094" duration="13601000" />
+      <workItem from="1507649196094" duration="17294000" />
     </task>
     <task id="LOCAL-00001" summary="Added ProblemState class to define each state of the problem after each operation">
       <created>1506815408921</created>
@@ -426,11 +421,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507708807051</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated I/O method">
+      <created>1507748476874</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1507748476874</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92952000" />
+    <option name="totallyTimeSpent" value="96645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,7 +455,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3465982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3465982" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -464,7 +466,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3992298" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3992298" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -520,7 +522,8 @@
     <MESSAGE value="Made some minor changes with the code" />
     <MESSAGE value="Cleaned the code, added some comments, sill not totally finished" />
     <MESSAGE value="Finished Solving the problem! All strategies work, give good solutions!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished Solving the problem! All strategies work, give good solutions!" />
+    <MESSAGE value="Updated I/O method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated I/O method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -540,7 +543,7 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="27" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -607,7 +610,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
-            <element signature="e#0#2264#0" expanded="true" />
+            <element signature="e#0#2238#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -628,7 +631,7 @@
         <state relative-caret-position="150">
           <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
-            <element signature="e#0#578#0" expanded="false" />
+            <element signature="e#0#578#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -706,7 +709,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
-            <element signature="e#0#2264#0" expanded="true" />
+            <element signature="e#0#2238#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -774,7 +777,7 @@
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
-            <element signature="e#0#2264#0" expanded="true" />
+            <element signature="e#0#2238#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -817,7 +820,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#2264#0" expanded="true" />
+            <element signature="e#0#2238#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -847,32 +850,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ComparableState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#578#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../A1COMP2150_SOLUTION_Hotel_reservations/src/Hotel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="37" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NodeOfState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="80" column="4" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="87" selection-end-column="60" />
-          <folding>
-            <element signature="e#2648#2649#0" expanded="true" />
-            <element signature="e#2682#2683#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -902,16 +884,6 @@
           <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding>
             <element signature="e#0#211#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AStartAlgorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="42" column="40" lean-forward="true" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#5738#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -948,33 +920,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BFSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="110" column="114" lean-forward="false" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
-          <folding>
-            <element signature="e#0#4984#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DFSearch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="113" column="114" lean-forward="false" selection-start-line="113" selection-start-column="114" selection-end-line="113" selection-end-column="114" />
           <folding>
             <element signature="e#0#4830#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/A1Q1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2264#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
@@ -991,10 +942,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/A1Q1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="23" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#2238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BFSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1628">
+          <caret line="110" column="114" lean-forward="false" selection-start-line="110" selection-start-column="114" selection-end-line="110" selection-end-column="114" />
+          <folding>
+            <element signature="e#0#4984#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NodeOfState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1047">
+          <caret line="13" column="57" lean-forward="true" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+          <folding>
+            <element signature="e#2648#2649#0" expanded="true" />
+            <element signature="e#2682#2683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AStartAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="62" column="4" lean-forward="true" selection-start-line="62" selection-start-column="4" selection-end-line="69" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#5738#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ComparableState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ProblemState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="321" column="6" lean-forward="true" selection-start-line="321" selection-start-column="6" selection-end-line="321" selection-end-column="6" />
+        <state relative-caret-position="234">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
           <folding>
             <element signature="e#0#13000#0" expanded="true" />
             <element signature="imports" expanded="true" />
